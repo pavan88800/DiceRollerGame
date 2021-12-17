@@ -8,37 +8,36 @@ import DiceFive from './assets/dice5.png'
 import DiceSix from './assets/dice6.png'
 
 const App = () => {
-  const [uri, setUri] = useState(DiceFive)
+  const [dice, setDice] = useState(DiceFive)
   const playGame = () => {
     let randomNumber = Math.floor(Math.random() * 6) + 1
-    console.log(randomNumber)
     switch (randomNumber) {
       case 1:
-        setUri(DiceOne)
+        setDice(DiceOne)
         break
       case 2:
-        setUri(DiceTwo)
+        setDice(DiceTwo)
         break
       case 3:
-        setUri(DiceThree)
+        setDice(DiceThree)
         break
       case 4:
-        setUri(DiceFour)
+        setDice(DiceFour)
         break
       case 5:
-        setUri(DiceFive)
+        setDice(DiceFive)
         break
       case 6:
-        setUri(DiceSix)
+        setDice(DiceSix)
         break
       default:
-        setUri(DiceFive)
+        setDice(DiceFive)
     }
   }
   return (
     <>
       <View style={styles.container}>
-        <Image style={styles.image} source={uri} />
+        <Image style={styles.image} source={dice} />
         <TouchableOpacity onPress={playGame}>
           <Text style={styles.gamePlayButton}>Play Games</Text>
         </TouchableOpacity>
